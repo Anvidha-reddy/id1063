@@ -29,6 +29,7 @@ int main()
 	  {
 		  printf("This is palindrome");
 	  }
+	  // if atleast a single letter is not same
 	  else
 	  {
 	      printf("This is not palindrome");

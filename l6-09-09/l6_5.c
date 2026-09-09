@@ -18,11 +18,13 @@ int main()
     //checking whether it is palindrome or not 
         for(int j = 0; j < len; j++)
 	{
+	    //checking no of letters are same
 	  if(word1[j]==word2[j])
 	  {
 		 same=same+1;
 	  }
 	}
+	//if all are same it is palindrome
 	  if(same==len)
 	  {
 		  printf("This is palindrome");

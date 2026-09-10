@@ -18,4 +18,4 @@ plt.title('Newton-Raphson: $e^x - 2 = 0$')
 plt.grid()
 plt.legend()
 
-plt.savefig('bt33.png', dpi=300, bbox_inches='tight')
+plt.savefig('bt33.pdf', dpi=300, bbox_inches='tight')

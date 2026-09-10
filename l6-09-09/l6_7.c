@@ -24,7 +24,7 @@ int main()
     printf("Enter y: ");
     scanf(" %c", &y);
 //loop to replace
-    for (int i = 0; str[i] != '\0'; i++)
+    for (int i = 0; i<n ; i++)
     {
         if (str[i] == x)
             str[i] = y;

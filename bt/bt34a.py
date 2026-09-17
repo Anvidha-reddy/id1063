@@ -1,3 +1,4 @@
+import subprocess
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -42,8 +43,6 @@ else:
     plt.title(f"k = {k:g}: Lines are Parallel (No Solution)")
 
 plt.legend()
-
-# Save the figure to a file and release memory instead of calling plt.show()
-plt.savefig("bt34a.png", bbox_inches="tight", dpi=300)
+plt.savefig("bt34a.pdf", bbox_inches="tight", dpi=300)
 plt.close()
-
+subprocess.run(["termux-open", "bt34a.pdf"])

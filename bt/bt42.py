@@ -15,14 +15,12 @@ target_fraction = 0.95  # 95% steady-state target
 t_theoretical = -tau * math.log(1.0 - target_fraction)
 t_rounded = round(t_theoretical)
 
-print("=" * 45)
+
 print(f"Theoretical Exact Value : {t_theoretical:.6f} seconds")
 print(f"Rounded GATE Answer     : {t_rounded} seconds")
-print("=" * 45)
 
-# ---------------------------------------------------------
 # 2. Graph Generation (Saved directly to PDF)
-# ---------------------------------------------------------
+
 t = np.linspace(0, 200, 500)
 y = 1 - np.exp(-t / tau)
 
@@ -98,7 +96,7 @@ plt.close()  # Closes plot buffer without calling plt.show()
 
 # ---------------------------------------------------------
 # 3. Automatically Open PDF in System Viewer
-# ---------------------------------------------------------
+
 if platform.system() == "Windows":
     os.startfile(pdf_filename)
 elif platform.system() == "Darwin":  # macOS

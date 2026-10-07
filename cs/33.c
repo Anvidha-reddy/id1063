@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Function from the question that counts swaps
+// Function from pseudocode that sorts array and counts total swaps
 int fun(int A[], int n) {
     int swap_count = 0;
     for (int i = 0; i <= n - 2; i++) {
@@ -20,35 +20,38 @@ int fun(int A[], int n) {
     return swap_count;
 }
 
-// Helper function to generate an array with values from uniform distribution [0, max_val]
-void generate_uniform_array(int A[], int n, int max_val) {
-    for (int i = 0; i < n; i++) {
-        // Uniform distribution between 0 and max_val inclusive
-        A[i] = rand() % (max_val + 1);
-    }
-}
-
 int main() {
     int n = 30;
     int max_val = 100;
     int A[30];
 
-    // Initialize random number generator seed
+    // Initialize random seed based on current time
     srand(time(NULL));
 
-    // 1. Generate array A from uniform distribution
-    generate_uniform_array(A, n, max_val);
+    // Generate array A from uniform distribution [0, 100]
+    for (int i = 0; i < n; i++) {
+        A[i] = rand() % (max_val + 1);
+    }
 
-    printf("Generated Uniform Array A[0...29]:\n");
+    // Print Original Array
+    printf("Original Array A[0...29]:\n");
     for (int i = 0; i < n; i++) {
         printf("%d ", A[i]);
     }
     printf("\n\n");
 
-    // 2. Count swaps using fun() for this random uniform array
-    int random_swaps = fun(A, n);
-    printf("Swaps required for this random uniform array: %d\n", random_swaps);
+    // Run fun() to sort and get total swaps
+    int total_swaps = fun(A, n);
 
+    // Print Output (Sorted) Array
+    printf("Output Array (Sorted) A[0...29]:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", A[i]);
+    }
+    printf("\n\n");
+
+    // Print Swaps
+    printf("Total swap operations performed: %d\n", total_swaps);
 
     return 0;
 }

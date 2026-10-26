@@ -14,7 +14,7 @@ def F_theoretical(x):
     )
 
 # 2. Simulation using Inverse Transform Method: X = (63U + 1)^(1/3)
-np.random.seed(42)
+
 N = 100_000
 U = np.random.uniform(0, 1, N)
 X_simulated = (63 * U + 1) ** (1 / 3)
